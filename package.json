@@ -1,0 +1,49 @@
+{
+  "name": "React electron starter",
+  "productName": "React Electron Starter",
+  "version": "1.0.0",
+  "description": "Simple boilerplate for building Electron apps with React",
+  "license": "MIT",
+  "main": "main.js",
+  "scripts": {
+    "prod": "cross-env NODE_ENV=production webpack --mode production --config webpack.build.config.js && electron --noDevServer .",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --hot --host 0.0.0.0 --config=./webpack.dev.config.js --mode development",
+    "build": "cross-env NODE_ENV=production webpack --config webpack.build.config.js --mode production",
+    "package": "npm run build",
+    "postpackage": "electron-builder build"
+  },
+  "build": {
+    "appId": "in.rajattyagi.appname",
+    "win": {
+      "target": "nsis",
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "allowToChangeInstallationDirectory": true,
+      "oneClick": false
+    }
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "@babel/preset-react": "^7.14.5",
+    "babel-loader": "^8.2.2",
+    "babili-webpack-plugin": "^0.1.2",
+    "cross-env": "^7.0.3",
+    "css-loader": "^6.4.0",
+    "electron": "^15.1.2",
+    "electron-builder": "^22.11.7",
+    "electron-devtools-installer": "^3.2.0",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.3.2",
+    "mini-css-extract-plugin": "^2.4.2",
+    "style-loader": "^3.3.0",
+    "webpack": "^5.58.1",
+    "webpack-cli": "^4.9.0",
+    "webpack-dev-server": "^4.3.1"
+  }
+}

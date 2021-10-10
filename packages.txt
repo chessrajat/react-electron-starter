@@ -1,0 +1,21 @@
+== Dev ==
+"@babel/core", "@babel/preset-env"
+"@babel/preset-react"
+"babel-loader"
+"babili-webpack-plugin"
+"cross-env"
+"css-loader"
+"electron"
+"electron-builder"
+"electron-devtools-installer"
+"file-loader"
+"html-webpack-plugin"
+"mini-css-extract-plugin"
+"style-loader"
+"webpack"
+"webpack-cli"
+"webpack-dev-server"
+
+== prod ==
+"react": 
+"react-dom": 
