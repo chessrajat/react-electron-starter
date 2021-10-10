@@ -12,7 +12,7 @@ module.exports = {
 			},
 			{
 				test: /\.jsx?$/,
-				use: [{ loader: 'babel-loader', query: { compact: false } }],
+				use: [{ loader: 'babel-loader', options: { compact: false } }],
 			},
 			{
 				test: /\.(jpe?g|png|gif)$/,
@@ -35,13 +35,13 @@ module.exports = {
 	],
 	devtool: 'cheap-source-map',
 	devServer: {
-		contentBase: path.resolve(__dirname, 'dist'),
-		stats: {
-			colors: true,
-			chunks: false,
-			children: false,
-		},
-		before() {
+		static: path.resolve(__dirname, 'dist'),
+		// stats: {
+		// 	colors: true,
+		// 	chunks: false,
+		// 	children: false,
+		// },
+		onBeforeSetupMiddleware() {
 			spawn('electron', ['.'], {
 				shell: true,
 				env: process.env,

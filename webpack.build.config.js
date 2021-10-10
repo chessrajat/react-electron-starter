@@ -13,7 +13,7 @@ module.exports = {
 			},
 			{
 				test: /\.jsx?$/,
-				use: [{ loader: 'babel-loader', query: { compact: false } }],
+				use: [{ loader: 'babel-loader', options: { compact: false } }],
 			},
 			{
 				test: /\.(jpe?g|png|gif)$/,
